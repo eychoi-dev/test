@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* base - 브라우저 별로 다를 수도 있는 것들을 초기화 */
+*{ padding : 0; margin : 0; } /* 태그 여백 없앰 */
+li{ list-style: none; } /* 기호나 번호 제거 */
+a{ text-decoration: none; } /* 링크 텍스트에 밑줄 없앰 */
+button{ cursor: pointer; } /* 모든 버튼에 마우스 손모양 처리 */
+
+/* body 설정 */
+body{ background-color: #ededed; } 
+.pagebody{
+	display : flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100dvh;
+}
+.loginbox{
+	width : 780px;
+	height : 550px;
+	margin : 0 auto;/* 블록요소를 부모영역에서 가운데 처리 */
+}
+.loginbox form{
+	width: 100%;
+	height: 450px;
+	background-color: #fff;
+	/* 패딩수치를 인사이드 처리 */
+	padding: 60px;
+	box-sizing: border-box;
+	border-radius: 30px;
+}
+.loginbox fieldset{
+	border: none; /* 테두리제거 */
+}
+.loginbox legend{
+	/* legend 태그는 지울 수가 없기때문에 화면 밖처리 */
+	position : absolute;
+	left : -999em;
+}
+.loginbox label:not(.remember){/* remember 제외 label만 css 적용 */
+	display : block;
+}
+.loginbox label{
+	font-size : 12px;
+	color: #333;
+	margin-bottom: 10px; /* 동위 선택자와의 간격 조정 */
+}
+.loginbox input[type="text"],
+.loginbox input[type="password"]{
+	display : block; /* 해당 요소 수직 나열 */
+	width : 100%;
+	height : 50px;
+	margin-bottom: 25px;
+	border: none;
+	background-color: #ededed;
+	padding: 0 20px; /* 0 : 상하 20px : 좌우 */
+	box-sizing: border-box; /* 패딩 수치를 인사이드 처리 */
+}
+.loginbox ul{
+	width : 100%;
+	text-align: right;
+	margin-bottom: 60px;
+}
+.loginbox li{
+	display: inline-block;
+	height: 12px;
+	line-height: 12px;
+}
+.loginbox li:last-child{ /* 리스트 마지막 요소 */
+	border-left: 1px solid #000;
+	padding-left: 10px;
+	margin-left: 4px;
+}
+.loginbox a{
+	/* 글자관련은 보통 최종태그에 줘야 적용됨 */
+	color: #333;
+	font-size: 12px;
+	position: relative; 
+	top: -2px; /* 현재 위치에서 상대적이동 */
+}
+.loginbox button{
+	display: block;
+	width: 220px;
+	height: 50px;
+	margin: 0 auto; /* 블럭요소가 부모영역에서 가운데 정렬 */
+	border: none;
+	background-color: #1673ea;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+.optbox {
+	display: flex;
+	justify-content: flex-start;
+}
+/* 체크박스 커스텀 */
+.opt1 input[type='checkbox']{/* input 초기화 */
+  display: none;
+}
+.opt1 .checkbox_label{/* (체크박스, 텍스트) 정렬 맞추기 */
+  display: flex;
+  align-items: center;
+}
+.opt1 .checkbox_icon::before{/* 체크박스 디자인 */
+  content:'';
+  display: block;
+  margin-right: 5px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 1px solid #9da3a5;
+  box-sizing:border-box;
+  position: relative;
+  cursor: pointer;
+}
+.opt1 .checkbox_label input:checked + .checkbox_icon::before{/* checked */
+  background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) #03c75a no-repeat center;
+  border:none;
+}
+.opt2{
+	margin-left: auto;
+}
