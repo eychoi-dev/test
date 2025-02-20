@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="test-style.css" />
+<link rel="stylesheet" href="css/test-style.css" />
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/main/index.js"></script>
 </head>
 <body>
 <div class="pagebody">
 	<div class="loginbox">
-		<form action="#">
+		<form>
 			<fieldset><!-- fieldset : form 요소를 그룹으로 묶는 태그 -->
 				<legend>로그인 구역</legend><!-- legend : 그룹으로 묶은 구역의 제목 태그 -->
 				<label for="loginId">아이디</label>
@@ -33,7 +35,7 @@
 						</ul>
 					</div>
 				</div>
-				<button type="submit">로그인</button>
+				<button id="login" type="button">로그인</button>
 			</fieldset>
 		</form>
 	</div>	
