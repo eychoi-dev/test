@@ -8,25 +8,27 @@
 $(function() {
 	//로그인 버튼 클릭
 	$("#login").click(function() {
+		var loginData = $("#loginForm").serializeObject();
+		console.log("loginData : ", loginData);
 		$.ajax({
 	        url : '/login',
-	        type : 'GET',
+	        type : 'POST',
 	        dataType : "json",
 	        contentType:"application/json",
-	        data : { name : "테스트" },
+	        data : JSON.stringify(loginData),
 	        timeout: 10000,
 	        beforeSend:function(){
 	            $('#loading').removeClass('display-none');
 	        },
 	        success : function(data){
-				console.log("success");
-	            console.log(data);
-	        },
+				console.log("data : ", data);
+				/*window.location.href = data.redirectUrl;*/
+			},
 	        error : function(request, status, error){
-	            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	            console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 	            var err=JSON.parse(request.responseText);
 
-	            alert(err.resData[0].errorMsg);
+	            console.log(err.resData[0].errorMsg);
 	                
 	            $('#loading').addClass('display-none');
 	        },
