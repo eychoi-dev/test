@@ -1,0 +1,16 @@
+package com.example.test.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer{
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/js/**")
+				.addResourceLocations("classpath:/static/js/")
+				.setCachePeriod(0);//캐시 비활성화 : 브라우저가 항상 최신 js 파일을 요청
+	}
+}
