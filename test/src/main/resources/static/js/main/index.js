@@ -8,29 +8,23 @@
 $(function() {
 	//로그인 버튼 클릭
 	$("#login").click(function() {
-		var loginData = $("#loginForm").serializeObject();
-		$.ajax({
-	        url : '/login',
-	        type : 'POST',
-	        dataType : "json",
-	        contentType:"application/json",
-	        data : JSON.stringify(loginData),
-	        timeout: 10000,
-	        beforeSend:function(){
-	            $('#loading').removeClass('display-none');
-	        },
-	        success : function(data){
-				console.log("수정");
-				window.location.href = data.redirectUrl;
-			},
-	        error : function(request, status, error){
-	            var err=JSON.parse(request.responseText);
-	            console.log(err.resData[0].errorMsg);
-	            $('#loading').addClass('display-none');
-	        },
-	        complete:function(){
-	            $('#loading').addClass('display-none');
-	        }
+		var loginData = $("#loginForm").serializeObject();		
+		gfn_ajax({
+			url : "/login",
+			data : loginData,
+			callBack : function(response) {
+				console.log("response : ", response);
+			}
 		});
+	});
+	
+	//회원가입
+	$("#signUp").click(function() {
+		console.log("회원가입");
+	});
+	
+	//비밀번호 찾기
+	$("#forgatPw").click(function() {
+		console.log("비밀번호 찾기");
 	});
 });

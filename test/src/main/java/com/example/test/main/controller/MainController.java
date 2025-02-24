@@ -24,6 +24,7 @@ public class MainController {
 		return "main/index";
 	}
 	
+//	로그인
 	@PostMapping("/login")
 	@ResponseBody
 	public Map<String, String> login(@RequestBody Map<String, Object> paramMap) {
@@ -35,7 +36,6 @@ public class MainController {
 		}else {
 			response.put("redirectUrl", "/loginError");
 		}
-		
 		return response;
 	}
 	
@@ -50,4 +50,11 @@ public class MainController {
 	public String failPage() {
 		return "main/loginError";
 	}
+	
+//	회원가입
+	@PostMapping("/signUp")
+	public String signUp() {
+		return "main/signUp";
+	}
+	
 }

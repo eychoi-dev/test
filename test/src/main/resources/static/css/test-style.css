@@ -13,6 +13,12 @@ body{ background-color: #ededed; }
 	align-items: center;
 	min-height: 100dvh;
 }
+/* 버튼 */
+.btn-txt{ /* 버튼 디자인 삭제 : 외곽선 조정 및 배경색 투명으로 변경 */
+	border : 0;
+	background-color: transparent;
+}
+/* 로그인박스 */
 .loginbox{
 	width : 780px;
 	height : 550px;
@@ -76,7 +82,7 @@ body{ background-color: #ededed; }
 	position: relative; 
 	top: -2px; /* 현재 위치에서 상대적이동 */
 }
-.loginbox button{
+.btn-login{
 	display: block;
 	width: 220px;
 	height: 50px;
@@ -116,6 +122,9 @@ body{ background-color: #ededed; }
 .opt1 .checkbox_label input:checked + .checkbox_icon::before{/* checked */
   background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) #03c75a no-repeat center;
   border:none;
+}
+.opt1 .checkbox_text{
+	font-weight: bold;
 }
 .opt2{
 	margin-left: auto;
