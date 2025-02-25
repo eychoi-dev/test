@@ -76,17 +76,7 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
-		<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>jstl</artifactId>
-		    <version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish.web</groupId>
-			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
-		</dependency>
+		</dependency>		
 		<!-- JSON VIEW 사용하기 위한 의존성 추가 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -101,6 +91,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -145,6 +150,12 @@
 			</resource>
 			<resource>
 				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/webapp</directory>
 				<includes>
 					<include>**/*</include>
 				</includes>

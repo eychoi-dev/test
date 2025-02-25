@@ -1,7 +1,7 @@
 /**
  * 공통 js
  */
-function gfn_ajax(options) {
+function gfn_ajax(options, successCallback, errorCallback) {
 	$.ajax({
         url : options.url,
         type : 'POST',
@@ -10,17 +10,25 @@ function gfn_ajax(options) {
         data : JSON.stringify(options.data),
         timeout: 10000,
         beforeSend:function(){
-            $('#loading').removeClass('display-none');
+			$('#loading').removeClass('display-none');
         },
         success : function(result, status, xhr){
-			options.callBack = result;
-			//fn_ajaxSuccess(result, status, xhr);
-			//window.location.href = data.redirectUrl;
+			if(typeof successCallback === "function") {
+				successCallback({
+					result : result,
+					status : status
+				});
+			}
 		},
         error : function(request, status, error){
-            var err=JSON.parse(request.responseText);
-            console.log(err.resData[0].errorMsg);
-            $('#loading').addClass('display-none');
+            if(typeof errorCallback === "function") {
+				errorCallback({
+					request : request,
+					status  : status,
+					error   : error
+				});
+			}
+			$('#loading').addClass('display-none');
         },
         complete:function(){
             $('#loading').addClass('display-none');

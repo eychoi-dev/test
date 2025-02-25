@@ -5,13 +5,18 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.test.main.service.MainService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class MainController {
@@ -53,8 +58,12 @@ public class MainController {
 	
 //	회원가입
 	@PostMapping("/signUp")
-	public String signUp() {
-		return "main/signUp";
+	@ResponseBody
+	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("signUp controller22");
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main/signUp");
+		return mav;
 	}
 	
 }
