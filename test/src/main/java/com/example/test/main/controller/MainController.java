@@ -56,14 +56,15 @@ public class MainController {
 		return "main/loginError";
 	}
 	
-//	회원가입
-	@PostMapping("/signUp")
-	@ResponseBody
-	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("signUp controller22");
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main/signUp");
-		return mav;
+//	로그아웃
+	@RequestMapping("/logout")
+	public String logout() {
+		return "redirect:main/index";
 	}
 	
+//	회원가입
+	@RequestMapping("/signUp")
+	public String signUp() {
+		return "main/signUp";
+	}
 }

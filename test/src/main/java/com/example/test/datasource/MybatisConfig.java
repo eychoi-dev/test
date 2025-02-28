@@ -1,4 +1,4 @@
-package com.example.test.main.datasource;
+package com.example.test.datasource;
 
 import javax.sql.DataSource;
 

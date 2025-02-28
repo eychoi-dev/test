@@ -5,7 +5,7 @@
  * - Login
  * Remember Me 여부 확인 및 각 화면이동
  */
-$(function() {
+$(function() {		
 	//로그인 버튼 클릭
 	$("#login").click(function() {
 		var loginData = $("#loginForm").serializeObject();		
@@ -30,12 +30,7 @@ $(function() {
 	
 	//회원가입
 	$("#signUp").click(function() {
-		console.log("회원가입");
-		gfn_ajax({url : "/signUp", data : {}}
-			, function(response) {
-				console.log("response : ", response);
-			}
-		)
+		window.location.href = "/signUp";
 	});
 	
 	//비밀번호 찾기

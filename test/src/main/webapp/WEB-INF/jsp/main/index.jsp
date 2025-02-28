@@ -27,7 +27,7 @@
 				<div class="optbox">
 					<div class="opt1">
 						<label class="checkbox_label">
-							<input type="checkbox" name="checkbox">
+							<input type="checkbox" name="checkbox" id="rememberMe" name="rememberMe">
 							<span class="checkbox_icon"></span>
 							<span class="checkbox_text">Remember Me</span>
 						</label>

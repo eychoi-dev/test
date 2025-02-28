@@ -4,12 +4,12 @@
 function gfn_ajax(options, successCallback, errorCallback) {
 	$.ajax({
         url : options.url,
-        type : 'POST',
+        type : gfn_nvl(options.type) == "" ? "POST" : options.type,
         dataType : "json",
         contentType:"application/json",
-        data : JSON.stringify(options.data),
+        data : gfn_nvl(options.data) == "" ? "" : JSON.stringify(options.data),
         timeout: 10000,
-        beforeSend:function(){
+        beforeSend:function(xhr){
 			$('#loading').removeClass('display-none');
         },
         success : function(result, status, xhr){
@@ -36,4 +36,14 @@ function gfn_ajax(options, successCallback, errorCallback) {
 	});
 	
 	return options;
+}
+
+//null 처리
+function gfn_nvl(oldValue, newValue) {
+	if(oldValue == null || oldValue == undefined) {
+		newValue = "";
+	}else{
+		newValue = oldValue;
+	}
+	return newValue;
 }
