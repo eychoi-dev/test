@@ -1,6 +1,5 @@
 package com.example.test.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,9 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -37,23 +34,13 @@ public class SecurityConfig {
 													.tokenValiditySeconds(60 * 60 * 24 * 7)//유지 기간 7일
 													.userDetailsService(userDetailsService()))//사용자 계정 정보 조회 rememberMe 기능이용시 필수 적용
 					.logout(logout -> logout.logoutUrl("/logout") 
-//											.logoutSuccessUrl("/")
-//											.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
+											.logoutSuccessUrl("/")
 											.logoutSuccessHandler(logoutSuccessHandler())
 											.invalidateHttpSession(true)
 											.deleteCookies("JSESSIONID", "remember-me"))
 		;
 		return httpSecurity.build();
 	}
-	
-////	logoutConfigure
-//	private void logoutConfigure(HttpSecurity httpSecurity) throws Exception {
-//		httpSecurity.logout(logout -> logout.logoutUrl("/logout")
-//					.logoutSuccessUrl("/main/index")
-//					.deleteCookies("JSESSIONID", "remember-me")
-////					.addLogoutHandler(logoutHandler())
-//					.logoutSuccessHandler(logoutSuccessHandler()));
-//	}
 	
 //	remember-me 기능 사용자 정보 조회
 	@Bean
@@ -66,15 +53,13 @@ public class SecurityConfig {
 		return new InMemoryUserDetailsManager(userDetails);
 	}
 	
-//	logout handler
-//	private LogoutHandler logoutHandler() { return null; }
+//	logoutHandler
 	@Bean
 	public LogoutSuccessHandler logoutSuccessHandler() { 
-		System.out.println("============== logout success handler");
 		return (request, response, authentication) -> {
 			response.setStatus(HttpServletResponse.SC_OK);
 			response.setContentType("application/json");
-//			response.getWriter().write("'{\'message\': \'로그아웃 성공\'}");
+			response.getWriter().write("{\"message\": \"로그아웃 성공\"}");
 			response.getWriter().flush();
 		};
 	}

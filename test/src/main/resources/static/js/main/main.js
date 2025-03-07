@@ -4,7 +4,6 @@
 */
 $(function() {
 	$("#logout").click(function() {
-		console.log("logout");
 		$.ajax({
 	        url : '/logout',
 	        type : "POST",
