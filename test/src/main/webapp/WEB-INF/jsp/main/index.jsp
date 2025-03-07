@@ -15,8 +15,8 @@
 </head>
 <body>
 <div class="pagebody">
-	<div class="loginbox">
-		<form id="loginForm">
+	<div class="pagebox">
+		<form id="pageForm">
 			<fieldset><!-- fieldset : form 요소를 그룹으로 묶는 태그 -->
 				<legend>로그인 구역</legend><!-- legend : 그룹으로 묶은 구역의 제목 태그 -->
 				<label for="loginId">아이디</label>
@@ -27,7 +27,7 @@
 				<div class="optbox">
 					<div class="opt1">
 						<label class="checkbox_label">
-							<input type="checkbox" name="checkbox" id="rememberMe" name="rememberMe">
+							<input type="checkbox" name="checkbox" id="rememberMe" name="remember-me">
 							<span class="checkbox_icon"></span>
 							<span class="checkbox_text">Remember Me</span>
 						</label>

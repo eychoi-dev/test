@@ -18,13 +18,12 @@ body{ background-color: #ededed; }
 	border : 0;
 	background-color: transparent;
 }
-/* 로그인박스 */
-.loginbox{
+.pagebox{
 	width : 780px;
 	height : 550px;
 	margin : 0 auto;/* 블록요소를 부모영역에서 가운데 처리 */
 }
-.loginbox form{
+.pagebox form{
 	width: 100%;
 	height: 450px;
 	background-color: #fff;
@@ -33,24 +32,24 @@ body{ background-color: #ededed; }
 	box-sizing: border-box;
 	border-radius: 30px;
 }
-.loginbox fieldset{
+.pagebox fieldset{
 	border: none; /* 테두리제거 */
 }
-.loginbox legend{
+.pagebox legend{
 	/* legend 태그는 지울 수가 없기때문에 화면 밖처리 */
 	position : absolute;
 	left : -999em;
 }
-.loginbox label:not(.remember){/* remember 제외 label만 css 적용 */
+.pagebox label:not(.remember){/* remember 제외 label만 css 적용 */
 	display : block;
 }
-.loginbox label{
+.pagebox label{
 	font-size : 12px;
 	color: #333;
 	margin-bottom: 10px; /* 동위 선택자와의 간격 조정 */
 }
-.loginbox input[type="text"],
-.loginbox input[type="password"]{
+.pagebox input[type="text"],
+.pagebox input[type="password"]{
 	display : block; /* 해당 요소 수직 나열 */
 	width : 100%;
 	height : 50px;
@@ -60,22 +59,22 @@ body{ background-color: #ededed; }
 	padding: 0 20px; /* 0 : 상하 20px : 좌우 */
 	box-sizing: border-box; /* 패딩 수치를 인사이드 처리 */
 }
-.loginbox ul{
+.pagebox ul{
 	width : 100%;
 	text-align: right;
 	margin-bottom: 60px;
 }
-.loginbox li{
+.pagebox li{
 	display: inline-block;
 	height: 12px;
 	line-height: 12px;
 }
-.loginbox li:last-child{ /* 리스트 마지막 요소 */
+.pagebox li:last-child{ /* 리스트 마지막 요소 */
 	border-left: 1px solid #000;
 	padding-left: 10px;
 	margin-left: 4px;
 }
-.loginbox a{
+.pagebox a{
 	/* 글자관련은 보통 최종태그에 줘야 적용됨 */
 	color: #333;
 	font-size: 12px;

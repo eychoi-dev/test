@@ -12,35 +12,33 @@
 </head>
 <body>
 <div class="pagebody">
-	<h4>회원가입</h4>
-	<!-- <div class="loginbox">
-		<form id="loginForm">
-			<fieldset>fieldset : form 요소를 그룹으로 묶는 태그
-				<legend>로그인 구역</legend>legend : 그룹으로 묶은 구역의 제목 태그
-				<label for="loginId">아이디</label>
-				<input type="text" id="loginId" name="loginId" placeholder="아이디를 입력해주세요">
-				<label for="loginPw">비밀번호</label>
-				<input type="password" id="loginPw" name="loginPw" placeholder="비밀번호를 입력해주세요">
-				
-				<div class="optbox">
-					<div class="opt1">
-						<label class="checkbox_label">
-							<input type="checkbox" name="checkbox">
-							<span class="checkbox_icon"></span>
-							<span class="checkbox_text">Remember Me</span>
-						</label>
-					</div>
-					<div class="opt2">
-						<ul>
-							<li><a href="#">Sign up</a></li>
-							<li><a href="#">Forgot Password</a></li>
-						</ul>
-					</div>
-				</div>
-				<button id="login" type="button">로그인</button>
-			</fieldset>
+	<div class="pagebox">
+		<form id="pageForm">
+			<table>
+				<tr>
+					<td>ID</td>
+					<td>입력</td>
+					<td>중복체크</td>
+				</tr>
+				<tr>
+					<td>PW</td>
+					<td>입력</td>
+				</tr>
+				<tr>
+					<td>PW CHECK</td>
+					<td>입력</td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td>입력</td>
+				</tr>
+				<tr>
+					<td>EMAIL</td>
+					<td>입력</td>
+				</tr>
+			</table>
 		</form>
-	</div>	 -->
+	</div>	
 </div>
 </body>
 </html>
