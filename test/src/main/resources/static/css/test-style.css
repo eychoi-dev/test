@@ -7,17 +7,27 @@ button{ cursor: pointer; } /* 모든 버튼에 마우스 손모양 처리 */
 
 /* body 설정 */
 body{ background-color: #ededed; } 
-.pagebody{
-	display : flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100dvh;
-}
+.pagebody{display : flex; justify-content: center; align-items: center; min-height: 100dvh;}
 /* 버튼 */
 .btn-txt{ /* 버튼 디자인 삭제 : 외곽선 조정 및 배경색 투명으로 변경 */
 	border : 0;
 	background-color: transparent;
 }
+.btn-login{
+	display: block;
+	width: 220px;
+	height: 50px;
+	margin: 0 auto; /* 블럭요소가 부모영역에서 가운데 정렬 */
+	border: none;
+	background-color: #1673ea;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+.btn-normal{display : block; width : 20%; border-color : #58a5ed; height : 35px; border-radius : 10px; background-color: #fff;}
+/* end - 버튼 */
+/* pagebox */
 .pagebox{
 	width : 780px;
 	height : 550px;
@@ -32,17 +42,15 @@ body{ background-color: #ededed; }
 	box-sizing: border-box;
 	border-radius: 30px;
 }
-.pagebox fieldset{
-	border: none; /* 테두리제거 */
-}
+/* 테두리제거 */
+.pagebox fieldset{border: none;}
 .pagebox legend{
 	/* legend 태그는 지울 수가 없기때문에 화면 밖처리 */
 	position : absolute;
 	left : -999em;
 }
-.pagebox label:not(.remember){/* remember 제외 label만 css 적용 */
-	display : block;
-}
+/* remember 제외 label만 css 적용 */
+.pagebox label:not(.remember){display : block;}
 .pagebox label{
 	font-size : 12px;
 	color: #333;
@@ -59,16 +67,8 @@ body{ background-color: #ededed; }
 	padding: 0 20px; /* 0 : 상하 20px : 좌우 */
 	box-sizing: border-box; /* 패딩 수치를 인사이드 처리 */
 }
-.pagebox ul{
-	width : 100%;
-	text-align: right;
-	margin-bottom: 60px;
-}
-.pagebox li{
-	display: inline-block;
-	height: 12px;
-	line-height: 12px;
-}
+.pagebox ul{width : 100%; text-align: right; margin-bottom: 60px;}
+.pagebox li{display: inline-block; height: 12px; line-height: 12px;}
 .pagebox li:last-child{ /* 리스트 마지막 요소 */
 	border-left: 1px solid #000;
 	padding-left: 10px;
@@ -81,50 +81,28 @@ body{ background-color: #ededed; }
 	position: relative; 
 	top: -2px; /* 현재 위치에서 상대적이동 */
 }
-.btn-login{
-	display: block;
-	width: 220px;
-	height: 50px;
-	margin: 0 auto; /* 블럭요소가 부모영역에서 가운데 정렬 */
-	border: none;
-	background-color: #1673ea;
-	color: #fff;
-	font-size: 14px;
-	font-weight: bold;
-	border-radius: 10px;
-}
-.optbox {
-	display: flex;
-	justify-content: flex-start;
-}
+/* end - pagebox */
 /* 체크박스 커스텀 */
-.opt1 input[type='checkbox']{/* input 초기화 */
-  display: none;
-}
-.opt1 .checkbox_label{/* (체크박스, 텍스트) 정렬 맞추기 */
-  display: flex;
-  align-items: center;
-}
-.opt1 .checkbox_icon::before{/* 체크박스 디자인 */
-  content:'';
-  display: block;
-  margin-right: 5px;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background-color: transparent;
-  border: 1px solid #9da3a5;
-  box-sizing:border-box;
-  position: relative;
-  cursor: pointer;
-}
-.opt1 .checkbox_label input:checked + .checkbox_icon::before{/* checked */
-  background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) #03c75a no-repeat center;
-  border:none;
-}
-.opt1 .checkbox_text{
-	font-weight: bold;
-}
-.opt2{
-	margin-left: auto;
-}
+.optbox {display: flex;	justify-content: flex-start;}
+/* input 초기화 */
+.opt1 input[type='checkbox']{display: none;}
+/* (체크박스, 텍스트) 정렬 맞추기 */
+.opt1 .checkbox_label{display: flex; align-items: center;}
+/* 체크박스 디자인 */
+.opt1 .checkbox_icon::before{content:''; display: block; margin-right: 5px; display: inline-block; width: 15px; height: 15px; background-color: transparent; border: 1px solid #9da3a5; box-sizing:border-box; position: relative; cursor: pointer;}
+/* checked */
+.opt1 .checkbox_label input:checked + .checkbox_icon::before{background: url(https://intranet.adef.co.kr/asset/images/ic_check.png) #03c75a no-repeat center; border:none;}
+.opt1 .checkbox_text{font-weight: bold;}
+.opt2{margin-left: auto;}
+/* end - 체크박스 커스텀 */
+/* signUp */
+.div-container{display: grid; gap: 15px;}
+.div-container input{padding: 5px; margin-bottom: 10px !important; height: 40px !important;}
+.div-container button{padding: 5px; margin-bottom: 10px !important; height: 40px !important;}
+.div-container .div-row{display: flex; align-items: center; gap: 10px;}
+.div-container .div-row label{display: flex !important; align-items: center; width : 100px; height: 36px; text-align: right;}
+.div-container .div-row-first{display: flex; justify-content: space-between;}
+.div-container .div-row-first input{width: 76% !important}
+.div-container .div-row-first label{width: 100px; text-align: right;}
+.div-container .div-button{display: flex; justify-content: center;}
+/* end - signUp */
