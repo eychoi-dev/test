@@ -3,8 +3,7 @@
 <mapper namespace="indexService">
 	<select id="selectUserList" resultType="String">
 		SELECT 1
-		  FROM USER_TBL
-		 WHERE ID = #{loginId}
-		   AND PASSWORD = #{loginPw}
+		  FROM TB_EMP
+		 WHERE EMP_CD = 'test1'
 	</select>
 </mapper>

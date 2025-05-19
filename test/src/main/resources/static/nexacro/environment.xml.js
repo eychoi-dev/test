@@ -60,7 +60,9 @@ if (nexacro.Environment)
         		{"id":"MultiLineTextField", "classname":"nexacro.MultiLineTextField", "type":"JavaScript"},
         		{"id":"DateField", "classname":"nexacro.DateField", "type":"JavaScript"},
         		{"id":"DateRangePicker", "classname":"nexacro.DateRangePicker", "type":"JavaScript"},
-        		{"id":"PopupDateRangePicker", "classname":"nexacro.PopupDateRangePicker", "type":"JavaScript"}
+        		{"id":"PopupDateRangePicker", "classname":"nexacro.PopupDateRangePicker", "type":"JavaScript"},
+        		{"id":"GoogleMap", "classname":"nexacro.GoogleMap", "type":"JavaScript"},
+        		{"id":"WebBrowser", "classname":"nexacro.WebBrowser", "type":"JavaScript"}
         ];
     	nexacro._addClasses(registerclass);
     };

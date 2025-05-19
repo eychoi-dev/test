@@ -20,16 +20,10 @@
 
             
             // UI Components Initialize
-            obj = new Div("map","51","49","517","422",null,null,null,null,null,null,this);
-            obj.set_taborder("0");
-            obj.set_text("Div00");
-            obj.set_border("1px solid black");
+            obj = new GoogleMap("GoogleMap00","50","35","730","465",null,null,null,null,null,null,this);
+            obj.set_taborder("1");
             this.addChild(obj.name, obj);
             // Layout Functions
-            //-- Default Layout : this.map
-            obj = new Layout("default","",0,0,this.map.form,function(p){});
-            this.map.form.addLayout(obj.name, obj);
-
             //-- Default Layout : this
             obj = new Layout("default","",1280,720,this,function(p){});
             obj.set_mobileorientation("landscape");
@@ -49,15 +43,16 @@
         
         // User Script
         this.registerScript("mapTest.xfdl", function() {
-        //load event
+        this.GoogleMap00_onload = function(obj,e)
+        {
+
+        };
+
         this.mapTest_onload = function(obj,e)
         {
-        	var mapOptions = {
-        		center : new naver.maps.LatLng(),
-        		zoom   : 10
-        	};
-
-        	var map = new naver.maps.Map('map', mapOptions);
+        		this.GoogleMap00.load(false, 11.96832946, 121.922996308, 0, 12);
+        //    this.GoogleMap00.set_apikey(nexacro.getApplication().googleMapAPIKey);
+            this.GoogleMap00.set_showzoom(true);
         };
 
         });
@@ -66,6 +61,7 @@
         this.on_initEvent = function()
         {
             this.addEventHandler("onload",this.mapTest_onload,this);
+            this.GoogleMap00.addEventHandler("onload",this.GoogleMap00_onload,this);
         };
         this.loadIncludeScript("mapTest.xfdl");
         this.loadPreloadList();
